@@ -1,0 +1,123 @@
+pre .btn {
+  padding: 6px 6px;
+  position: absolute;
+  right: 8px;
+  top: 6px;
+  display: inline-block;
+  font-size: 13px;
+  line-height: 20px;
+  color: #333;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  border: none;
+  border-radius: 3px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-appearance: none;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+  line-height: 1;
+  z-index: 10;
+  background: #0b1c2c;
+}
+
+pre .btn svg {
+  opacity: 0.6;
+}
+
+pre .btn:hover > svg {
+  opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+  pre .btn {
+    opacity: 1;
+  }
+}
+
+.tooltipped {
+  position: relative;
+  z-index: 10;
+}
+
+.tooltipped::after {
+  position: absolute;
+  z-index: 10;
+  display: none;
+  padding: 5px 8px;
+  font-size: 11px;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: break-word;
+  white-space: pre;
+  pointer-events: none;
+  content: attr(aria-label);
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 3px;
+  -webkit-font-smoothing: subpixel-antialiased;
+  opacity: 0;
+}
+
+.tooltipped::before {
+  position: absolute;
+  z-index: 10;
+  display: none;
+  width: 0;
+  height: 0;
+  color: rgba(0, 0, 0, 0.8);
+  pointer-events: none;
+  content: "";
+  border: 5px solid transparent;
+  opacity: 0;
+}
+
+@-webkit-keyframes tooltip-appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes tooltip-appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.tooltipped:hover::before,
+.tooltipped:hover::after,
+.tooltipped:active::before,
+.tooltipped:active::after,
+.tooltipped:focus::before,
+.tooltipped:focus::after {
+  display: inline-block;
+  text-decoration: none;
+  -webkit-animation-name: tooltip-appear;
+  animation-name: tooltip-appear;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease-in;
+  animation-timing-function: ease-in;
+}
+
+.tooltipped-w::after {
+  top: 6px;
+  right: 205%;
+}
+
+.tooltipped-w::after {
+  -webkit-transform: translateX(50%);
+  transform: translateX(50%);
+}
